@@ -1,0 +1,88 @@
+{
+    "schema_issues": {
+        "missing_values": {
+            "text": 0,
+            "label": 0,
+            "gender": 0
+        },
+        "column_types": {
+            "text": "object",
+            "label": "int64",
+            "gender": "int64"
+        },
+        "empty_strings": {
+            "text": 0,
+            "label": 0,
+            "gender": 0
+        }
+    },
+    "duplicates": {
+        "exact_duplicates_count": 418,
+        "duplicate_rows": [
+            {
+                "text": "Quite what the producers of this appalling adaptation were trying to do is impossible to fathom.<br /><br />A group of top quality actors, in the main well cast (with a couple of notable exceptions), who give pretty good performances. Penelope Keith is perfect as Aunt Louise and equally good is Joanna Lumley as Diana. All do well with the scripts they were given.<br /><br />So much for the good. The average would include the sets. Nancherrow is nothing like the house described in the book, although bizarrely the house they use for the Dower House looks remarkably like it. It is clear then that the Dower House is far too big. In the later parts, the writers decided to bring the entire story back to the UK, presumably to save money, although with a little imagination I have no doubt they could have recreated Ceylon.<br /><br />Now to the bad. The screenplay. This is such an appallingly bad adaptation is hard to find words to condemn it. Edward does not die in the battle of Britain but survives, blinded. He makes a brief appearance then commits suicide - why?? Loveday has changed from the young woman totally in love with Gus to a sensible farmer's wife who can give up the love her life with barely a tear (less emotional than Brief Encounter). Gus, a man besotted and passionately in love, is prepared to give up his love without complaint. Walter (Mudge in the book) turns from a shallow unfaithful husband to a devoted family man. Jess is made into a psychologically disturbed young woman who won't speak. Aunt Biddy still has a drink problem but now without any justification. The Dower House is occupied by the army for no obvious reason other than a very short scene with Jess who has a fear of armed soldiers. Whilst Miss Mortimer's breasts are utterly delightful, I could not see how their display on several occasions moved the plot forward. The delightfully named Nettlebed becomes the mundane Dobson. The word limit prevents me from continuing the list.<br /><br />There is a sequel (which I lost all interest in watching after this nonsense) and I wonder if the changes were made to create the follow on story. It is difficult to image that Rosamunde Pilcher would have approved this grotesque perversion of her book; presumably she lost her control when the rights were purchased.",
+                "label": 0,
+                "gender": 0
+            },
+            {
+                "text": "My favourite police series of all time turns to a TV-film. Does it work? Yes. Gee runs for mayor and gets shot. The Homicide \"hall of fame\" turns up. Pembleton and nearly all of the cops who ever played in this series. A lot of flashbacks helps you who hasn\u00b4t seen the TV-series but it amuses the fans too. The last five minutes solves another murder and at the very end even two of the dead cops turn up. And a short appearance from my favourite coroner Juliana Cox. This is a good film.",
+                "label": 1,
+                "gender": 1
+            },
+            {
+                "text": "Beautiful film, pure Cassavetes style. Gena Rowland gives a stunning performance of a declining actress, dealing with success, aging, loneliness...and alcoholism. She tries to escape her own subconscious ghosts, embodied by the death spectre of a young girl. Acceptance of oneself, of human condition, though its overall difficulties, is the real purpose of the film. The parallel between the theatrical sequences and the film itself are puzzling: it's like if the stage became a way out for the Heroin. If all american movies could only be that top-quality, dealing with human relations on an adult level, not trying to infantilize and standardize feelings... One of the best dramas ever. 10/10.",
+                "label": 1,
+                "gender": 1
+            },
+            {
+                "text": "If you liked the Grinch movie... go watch that again, because this was no where near as good a Seussian movie translation. Mike Myers' Cat is probably the most annoying character to \"grace\" the screen in recent times. His voice/accent is terrible and he laughs at his own jokes with an awful weasing sound, which is about the only laughing I heard at the theater. Not even the kids liked this one folks, and kids laugh at anything now. Save your money and go see Looney Tunes: Back in Action if you're really looking for a fun holiday family movie.",
+                "label": 0,
+                "gender": 0
+            },
+            {
+                "text": "I want very much to believe that the above quote (specifically, the English subtitle translation), which was actually written, not spoken, in a rejection letter a publisher sends to the protagonist, was meant to be self-referential in a tongue-in-cheek manner. But if so, director Leos Carax apparently neglected to inform the actors of the true nature of the film. They are all so dreadfully earnest in their portrayals that I have to conclude Carax actually takes himself seriously here, or else has so much disdain for everyone, especially the viewing audience, that he can't be bothered letting anyone in on the joke.<br /><br />Some auteurs are able to get away with making oblique, bizarre films because they do so with \u00e9lan and unique personal style (e.g., David Lynch and Alejandro Jodorowsky). Others use a subtler approach while still weaving surreal elements into the fabric of the story (e.g., Krzysztof Kieslowski, and David Cronenberg's later, less bizarre works). In Pola X, Carax throws a disjointed mess at the viewer and then dares him to find fault with it. Well, here it is: the pacing is erratic and choppy, in particular continuity is often dispensed with; superfluous characters abound (e.g., the Gypsy mother and child); most of the performances are overwrought; the lighting is often poor, particularly in the oft-discussed sex scene; unconnected scenes are thrust into the film for no discernible reason; and the list goes on.<br /><br />Not to be completely negative, it should be noted that there were some uplifting exceptions. I liked the musical score, even the cacophonous industrial-techno music being played in the sprawling, abandoned complex to which the main characters retreat in the second half of the film (perhaps a reference to Andy Warhol's 'Factory' of the '60s?). Much of the photography of the countryside was beautiful, an obvious attempt at contrast with the grimy city settings. And, even well into middle-age, Cathering Deneuve shows that she still has 'it'. Her performance was also the only one among the major characters that didn't sink into bathos.<br /><br />There was an earlier time when I would regard such films as \"Pola X\" more charitably. Experimentation is admirable, even when the experiment doesn't work. But Carax tries nothing new here; the film is a pastiche of elements borrowed from countless earlier films, and after several decades of movie-viewing and literally thousands of films later, I simply no longer have the patience for this kind of unoriginal, poorly crafted tripe. At this early moment in the 21st century, one is left asking: With the exception of Jean-Pierre Jeunet, are there *any* directors in France who know how to make a watchable movie anymore? Rating: 3/10.",
+                "label": 0,
+                "gender": 0
+            }
+        ]
+    },
+    "class_imbalance": {
+        "label_distribution": {
+            "1": 25000,
+            "0": 25000
+        },
+        "most_common": 1,
+        "least_common": 1
+    },
+    "toxicity_analysis": [
+        {
+            "label": "toxic",
+            "score": 0.003734281286597252
+        },
+        {
+            "label": "toxic",
+            "score": 0.6642783284187317
+        },
+        {
+            "label": "toxic",
+            "score": 0.13543082773685455
+        },
+        {
+            "label": "toxic",
+            "score": 0.0008051597978919744
+        },
+        {
+            "label": "toxic",
+            "score": 0.0009454186074435711
+        }
+    ],
+    "text_similarity": [],
+    "fairness_metrics": {
+        "statistical_parity_difference": 0.0,
+        "disparate_impact": 1.0,
+        "equal_opportunity_difference": 0.0,
+        "average_abs_odds_difference": 0.0,
+        "error_rate_difference": 0.01128003818969725
+    },
+    "generated_at": "2025-08-31 15:52:46.861537"
+}

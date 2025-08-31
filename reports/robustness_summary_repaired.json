@@ -1,0 +1,35 @@
+{
+  "n_examples": 800,
+  "perturbations": [
+    {
+      "name": "lower",
+      "flip_rate": 0.0,
+      "avg_conf_change": 0.0
+    },
+    {
+      "name": "upper",
+      "flip_rate": 0.0,
+      "avg_conf_change": 0.0
+    },
+    {
+      "name": "no_punc",
+      "flip_rate": 0.0,
+      "avg_conf_change": 1.505271010864631e-05
+    },
+    {
+      "name": "extra_ws",
+      "flip_rate": 0.0,
+      "avg_conf_change": 0.0
+    },
+    {
+      "name": "typo_swap",
+      "flip_rate": 0.3875,
+      "avg_conf_change": 0.2876914517945932
+    },
+    {
+      "name": "typo_keyboard",
+      "flip_rate": 0.385,
+      "avg_conf_change": 0.28681444742677503
+    }
+  ]
+}

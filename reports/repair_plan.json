@@ -1,0 +1,24 @@
+{
+  "class_balance": {
+    "counts": {
+      "positive": 20000,
+      "negative": 20000
+    },
+    "fractions": {
+      "positive": 0.5,
+      "negative": 0.5
+    }
+  },
+  "suggestions": [
+    {
+      "title": "Remove near-duplicates",
+      "reason": "Found 8 pairs above similarity threshold.",
+      "action": "drop one item from each high-similarity pair to reduce leakage and redundancy."
+    },
+    {
+      "title": "Augment for robustness",
+      "reason": "Highest flip rate under 'typo_keyboard' perturbation.",
+      "action": "augment training data with 'typo_keyboard' style noise; consider char-level normalization & token cleanup."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "n_scored": 1500,
+  "toxicity_mean": 0.03851580744613117,
+  "toxicity_p95": 0.22046379670500754,
+  "max_identity_scores": {
+    "dehatebert-mono-english_score": 0.9766047596931458
+  }
+}

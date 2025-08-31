@@ -1,0 +1,12 @@
+{
+  "protected": {
+    "accuracy": 0.9020134228187919,
+    "tpr": 0.9122748498999332
+  },
+  "non_protected": {
+    "accuracy": 0.9168316831683169,
+    "tpr": 0.916083916083916
+  },
+  "demographic_parity_diff": 0.014818260349524937,
+  "equalized_odds_tpr_diff": 0.003809066183982801
+}

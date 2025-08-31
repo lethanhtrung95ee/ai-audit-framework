@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Evidently Drift Report — IMDB (Train vs Test)</title>
+<style>
+  :root {
+    --bg: #0b1220;
+    --card: #111a2b;
+    --text: #e6eefc;
+    --muted: #9bb0d3;
+    --accent: #8ab4ff;
+    --good: #2ecc71;
+    --warn: #f1c40f;
+    --bad: #e74c3c;
+    --chip: #1a2741;
+    --border: #1d2a44;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.55;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  .title { font-size: 28px; font-weight: 700; letter-spacing: .3px; }
+  .subtitle { color: var(--muted); margin-top: 6px; }
+  .card {
+    background: linear-gradient(180deg, var(--card), #0f1a2b 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 18px;
+    margin: 18px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+  .grid { display: grid; gap: 14px; }
+  .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .metric { background: var(--chip); border:1px solid var(--border); padding:14px; border-radius:12px; }
+  .metric .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+  .metric .value { margin-top:6px; font-size: 22px; font-weight: 700; }
+  .chip { display:inline-flex; gap:8px; align-items:center; background:var(--chip); border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--muted);}
+  .status { font-weight:700; }
+  .status.good { color: var(--good); }
+  .status.warn { color: var(--warn); }
+  .status.bad  { color: var(--bad); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+  th { color: var(--muted); font-weight: 600; }
+  .pill { padding: 4px 8px; border-radius: 8px; font-size: 12px; border:1px solid var(--border); background: var(--chip); color: var(--text);}
+  .legend { color: var(--muted); font-size: 12px; }
+  .footer { color: var(--muted); font-size: 12px; text-align:center; margin: 24px 0 12px; }
+  .section-title { font-weight:700; font-size:18px; margin-bottom:6px; }
+  .note { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Evidently Drift Report — IMDB (Train vs Test)</div>
+    <div class="subtitle">Generated on 2025-08-31 22:26:24 | Reference: <span class="pill">train.csv</span> | Current: <span class="pill">test.csv</span></div>
+
+    <div class="card">
+      <div class="section-title">Overview</div>
+      <div class="grid grid-3">
+        <div class="metric">
+          <div class="label">Drift Status</div>
+          <div class="value status bad">Data drift detected</div>
+          <div class="legend">Threshold: p &lt; 0.05</div>
+        </div>
+        <div class="metric">
+          <div class="label">Features Monitored</div>
+          <div class="value">2</div>
+          <div class="legend">Text: <b>review</b>, Target: <b>sentiment</b></div>
+        </div>
+        <div class="metric">
+          <div class="label">Alerts</div>
+          <div class="value">2</div>
+          <div class="legend">review (text similarity), sentiment (target share)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Data Drift (Text Feature)</div>
+      <div class="note">We compare sentence-embedding distributions of <b>review</b> between reference and current. PSI and two-sample tests are used to flag drift.</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Metric</th>
+            <th>Reference</th>
+            <th>Current</th>
+            <th>Stat</th>
+            <th>p-value</th>
+            <th>Drift</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>review</code></td>
+            <td>PSI (binned embeddings)</td>
+            <td>—</td>
+            <td>—</td>
+            <td>0.28</td>
+            <td>0.012</td>
+            <td><span class="status bad">Yes</span></td>
+          </tr>
+          <tr>
+            <td><code>review</code></td>
+            <td>Two-sample test (KS)</td>
+            <td>—</td>
+            <td>—</td>
+            <td>D=0.21</td>
+            <td>0.018</td>
+            <td><span class="status bad">Yes</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note">Interpretation: The text distribution shifted — likely different topics/phrasing; consider rebalancing or updating training data.</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Target Drift (Label Distribution)</div>
+      <div class="grid grid-2">
+        <div class="metric">
+          <div class="label">Reference Positives</div>
+          <div class="value">50.2%</div>
+          <div class="legend">train.csv</div>
+        </div>
+        <div class="metric">
+          <div class="label">Current Positives</div>
+          <div class="value">57.9%</div>
+          <div class="legend">test.csv</div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Test</th><th>Statistic</th><th>p-value</th><th>Drift</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chi-square</td><td>4.93</td><td>0.026</td><td><span class="status bad">Yes</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note">Interpretation: Target ratio shifted; adjust threshold or retrain with updated class balance.</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Recommendations</div>
+      <ul>
+        <li>Sample additional training reviews reflecting current topics to reduce text distribution drift.</li>
+        <li>Rebalance labels or calibrate decision threshold to account for the 7.7% positive-rate shift.</li>
+        <li>Re-run similarity checks to remove near-duplicates that may bias model learning.</li>
+      </ul>
+      <div class="chip">Auto-generated</div>
+    </div>
+
+    <div class="footer">
+      AI Audit Framework — mock Evidently-style report. For formal results, run the pipeline with Evidently 0.5+.
+    </div>
+  </div>
+</body>
+</html>
