@@ -141,3 +141,7 @@ Pull requests and issue reports are welcome! This framework is designed to grow 
 ## 📜 License
 
 MIT License – free to use, modify, and distribute.
+
+## Dataset
+Place the raw IMDb dataset (`IMDB_Dataset.csv`) into `data/raw/`.
+You can download it here: [IMDb Sentiment Dataset](https://ai.stanford.edu/~amaas/data/sentiment/).
